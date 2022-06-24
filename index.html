@@ -1,18 +1,34 @@
-<!DOCTYPE html> 
-<html> 
-<body> 
-
-<video src="mo.mp4" autoplay muted loop></video>
-
-<style>
-    video {
-        height: 100vh;
-        width: 100%;
-        object-fit: fill; // use "cover" to avoid distortion
-        position: absolute;
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>videobg</title>
+    <style>
+    body {
+      margin:0;
     }
-</style>
-
-</body> 
+    .mainblock{width:100%; float:left; margin:0 auto; padding:0; height:100vh; position:relative; overflow:hidden;}
+.mainblock #video-background{
+    position: absolute;
+    left: 0;
+    right:0;
+    margin:0 auto;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width:100%; 
+}
+@media screen and (max-width:1024px){
+    .mainblock #video-background{width:auto; height:100vh;}
+}
+    </style>
+  </head>
+  <body>
+    <div class="mainblock">
+        <video preload="metadata" id="video-background" controls="" autoplay="" loop="" playsinline="">
+          <source src="mo.mp4" type="video/mp4">
+        </video>
+    </div>
+  </body>
 </html>
-
